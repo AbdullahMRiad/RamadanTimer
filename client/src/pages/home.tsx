@@ -11,7 +11,7 @@ import {
 import { differenceInSeconds, format, parse, isValid } from "date-fns";
 import { useToast } from "@/hooks/use-toast";
 import { getTimeString } from "@/lib/countdown";
-import { useTheme } from "@/components/theme-provider";
+import { useTheme } from "next-themes";
 
 export default function Home() {
   const [targetTime, setTargetTime] = useState("");
@@ -88,7 +88,7 @@ export default function Home() {
         <Button
           variant="ghost"
           size="icon"
-          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
           <Sun className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <Moon className="absolute h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
